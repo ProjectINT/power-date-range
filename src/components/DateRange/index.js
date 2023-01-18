@@ -32,6 +32,7 @@ class DateRange extends Component {
     let { startDate, endDate } = selectedRange;
     const now = new Date();
     let nextFocusRange;
+
     if (!isSingleValue) {
       startDate = value.startDate;
       endDate = value.endDate;
@@ -90,7 +91,7 @@ class DateRange extends Component {
       nextFocusRange: nextFocusRange,
     };
   };
-  setSelection = (value, isSingleValue) => {
+  setSelection = (value, isSingleValue = true) => {
     const { onChange, ranges, onRangeFocusChange } = this.props;
     const focusedRange = this.props.focusedRange || this.state.focusedRange;
     const focusedRangeIndex = focusedRange[0];
